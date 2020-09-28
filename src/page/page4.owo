@@ -1,0 +1,10 @@
+<template lang="pug">
+.page4
+  
+</template>
+<script>
+module.exports = {
+}
+</script>
+<style lang="less">
+</style>

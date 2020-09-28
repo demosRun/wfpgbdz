@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <!-- 页面的元信息 -->
+    <title>{TAG_14226_TAG}</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="white"/>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="filetype" content="1"/>
+    <meta name="publishedtype" content="1"/>
+    <meta name="pagetype" content="2"/>
+    <meta name="screen-orientation" content="landscape"/>
+    <meta name="x5-orientation" content="landscape"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="browsermode" content="application"/>
+    <meta name="x5-page-mode" content="app"/>
+    
+      <!-- 页面主样式文件 -->
+      <link charset="utf-8"  rel="stylesheet" href="./static/css/owo.core.css">
+      
+    <!-- 附属css文件 -->
+    <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
+      
+  </head>
+  <body>
+    <div class="scale-box">
+    <!-- 页面[loading]-->
+    <div class="loading-box page" template="loading" style="display: none;"><img class="loading" src="https://cunchu.site/ozzx/resource/loadingLogo.png"><div class="loading-bar"><div class="num-bar"></div></div><span class="text">Loading</span><div class="num">0%</div></div>
+    <!-- 页面[page1]-->
+    <div class="page-1 page" template="page1" style="display: none;"><img class="so so-0" src="./static/resource/504.png"><img class="so so-1" src="./static/resource/804.png"><img class="so so-2" src="./static/resource/218.png"><img class="so so-3" src="./static/resource/800.png"><img class="so so-4" src="./static/resource/803.png" go="page2"></div>
+    <!-- 页面[page2]-->
+    <div class="page2 page" template="page2" style="display: none;"><img class="so so-0" src="./static/resource/804.jpg"><img class="so so-1" src="./static/resource/797.png"><img class="so so-2" src="./static/resource/798.png"><div class="so so-3">任职期间，他提出并实施公益项目“马郢计划”，把“助学”、“助村”、“助农”三部分有机融合，坚持不懈推进项目实施。在他的带领下，马郢发生了翻天覆地的变化，乡村的孩子登上了城市大舞台，乡村体验游带火了原先空寂的村庄，众多农户实现了增收致富……</div><div class="so so-4"><div class="shalder"><img class="play" src="./static/resource/play.png"></div><img class="video-image" src="./static/resource/802.png"></div></div>
+    <!-- 页面[page3]-->
+    <div class="page3 page" template="page3" style="display: none;"></div>
+    <!-- 页面[page4]-->
+    <div class="page4 page" template="page4" style="display: none;"></div>
+    <!-- 页面[page5]-->
+    <div class="page5 page" template="page5" style="display: none;"></div></div>
+    
+
+    <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript"  charset="UTF-8"></script>
+    <script src="./static/js/main.js" type="text/javascript"  charset="UTF-8"></script>
+    <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript"  charset="UTF-8"></script>
+<!-- 框架script文件 -->
+<script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
+<script type="text/javascript" charset="UTF-8">
+owo.script = {
+  "loading": {
+    "data": {
+      "imgList": [""]
+    },
+    "show": function show() {
+      var mum = owo.query('.num')[0];
+      var numBar = owo.query('.num-bar')[0];
+      this.preloadImages(this.data.imgList, function (e) {
+        setTimeout(function () {
+          // owo.go({noBack: true,page: "page1"})
+          owo.go('page1');
+        }, 500);
+      }, function (num) {
+        numBar.style.width = num + '%';
+        mum.innerHTML = num + '%';
+      });
+    },
+    "preloadImage": function preloadImage(src, successFn) {
+      var image = new Image();
+      image.src = src;
+
+      image.onload = function () {
+        successFn && successFn(src);
+      };
+
+      image.onerror = function (error) {
+        successFn && successFn(src);
+      };
+    },
+    "preloadImages": function preloadImages(srcs, doneFn, progressFn) {
+      var _this = this;
+
+      if (!Array.isArray(srcs)) {
+        console.log('第一个参数只能是一个数组');
+      } else {
+        var allCount = srcs.length;
+        var doneCount = 0;
+        srcs.forEach(function (srcItem) {
+          _this.preloadImage(srcItem, function () {
+            doneCount++;
+            progressFn && progressFn(Math.ceil(100 * doneCount / allCount));
+
+            if (doneCount === allCount) {
+              doneFn && doneFn();
+            }
+          });
+        });
+      }
+    }
+  },
+  "page1": {},
+  "page2": {},
+  "page3": {},
+  "page4": {},
+  "page5": {}
+};
+</script>
+
+  </body>
+</html>
