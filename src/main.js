@@ -3,9 +3,9 @@ function scrollIntoView () {
 }
 
 // 阻止微信拖动
-document.body.addEventListener('touchmove', function (e) {
-  e.preventDefault() // 阻止默认的处理方式(阻止下拉滑动的效果)
-}, {passive: false})
+// document.body.addEventListener('touchmove', function (e) {
+//   e.preventDefault() // 阻止默认的处理方式(阻止下拉滑动的效果)
+// }, {passive: false})
 
 
 _owo.ready(function() {
@@ -31,6 +31,7 @@ var Erase = {
   radius: 10,
   scale: 1,
   speed: 10,
+  touchTime: 0 ,
   init: function(el, canvasWidth, canvasHeight, imgUrl, radius, scale) {
 
     this.radius = radius
@@ -86,25 +87,6 @@ var Erase = {
       return "pc";
     }
   },
-  getOpacityPercentage: function(context, opacity = 128) {
-    var imageData = context.getImageData(0,0,this.canvasWidth, this.canvasHeight);
-    var colorDataArr = imageData.data;
-    // console.info('color data:',colorDataArr);
-    var colorDataArrLen = colorDataArr.length;
-    var eraseArea = [];
-    for(var i = 0; i < colorDataArrLen; i += 4) {
-      // 严格上来说，判断像素点是否透明需要判断该像素点的a值是否等于0，
-      if(colorDataArr[i + 3] < opacity) {
-        eraseArea.push(colorDataArr[i + 3]);
-      }
-    }
-    var divResult = eraseArea.length / (colorDataArrLen/4);
-    var pointIndex = String(divResult).indexOf('.');
-    if (pointIndex>-1) {
-      divResult = String(divResult).slice(0,pointIndex+5);
-    }
-    return Number(divResult).toFixed(2);
-  },
   clear: function(context,width = 0,height = 0) {
     var centerX = width/2;
     var centerY = height/2;
@@ -137,14 +119,13 @@ var Erase = {
     var endEventFun = function() {
       console.info('erase end');
       if (isClearAll) return;
-      var percentage = _this.getOpacityPercentage(canvasContext);
-      console.info('像素百分比：',percentage);
-      if (percentage > 0.3) {
+      console.info('像素百分比：', _this.touchTime);
+      if (_this.touchTime > 60) {
         _this.clear(canvasContext, canvasWidth, canvasHeight);
         isClearAll = true;
         setTimeout(() => {
           _this.canvasEle.style.display = 'none'
-        }, 3000);
+        }, 1200);
       }
       isStartClear = false;
     }
@@ -170,6 +151,7 @@ var Erase = {
       canvasEle.ontouchend = endEventFun;
       canvasEle.ontouchmove = function(event) {
         clearFun(event);
+        _this.touchTime++
       }
     }
     if (deviceType === 'pc') {
@@ -177,6 +159,7 @@ var Erase = {
       canvasEle.onmouseup = endEventFun;
       canvasEle.onmousemove = function (event) {
         clearFun(event);
+        _this.touchTime++
       }
     }
   }

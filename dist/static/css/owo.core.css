@@ -234,7 +234,7 @@ li {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.76);
+  z-index: 9;
 }
 
 .page2 .shalder .play {
@@ -260,6 +260,13 @@ li {
   position: absolute;
   left: 520px;
   top: 1160px;
+}
+
+.page2 video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 .page3 {
   background-image: url('../resource/803.jpg');
@@ -412,6 +419,21 @@ li {
 .page6 .so-3 {
   left: 0px;
   top: 625px;
+  z-index: 0;
+}
+.page7 {
+  background-image: url('../resource/802.jpg');
+}
+
+.page7 .so-0 {
+  left: 143px;
+  top: 368px;
+  z-index: 1;
+}
+
+.page7 .so-1 {
+  left: 283px;
+  top: 951px;
   z-index: 0;
 }
 /* 页面切换动画 */

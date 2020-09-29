@@ -5,14 +5,19 @@
   img.so.so-2(src="@|798.png|")
   .so.so-3 任职期间，他提出并实施公益项目“马郢计划”，把“助学”、“助村”、“助农”三部分有机融合，坚持不懈推进项目实施。在他的带领下，马郢发生了翻天覆地的变化，乡村的孩子登上了城市大舞台，乡村体验游带火了原先空寂的村庄，众多农户实现了增收致富……
   .so.so-4
-    .shalder
+    .shalder(o-tap="playVideo")
       img.play(src="@|play.png|")
-    img.video-image(src="@|802.png|")
+    //- img.video-image(src="@|802.png|")
+    video(src="http://cunchu.site/people/%E5%B1%B1.mp4")
   //- 下一页
   img.next(src="@|next.png|" go="page3//scaleDown/moveFromRight/true/scaleDown/moveFromLeft")
 </template>
 <script>
 module.exports = {
+  playVideo: function () {
+    this.query('.shalder').style.display = 'none'
+    this.query('video').play()
+  }
 }
 </script>
 <style lang="less">
@@ -57,7 +62,8 @@ module.exports = {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.76);
+  z-index: 9;
+  // background-color: rgba(0, 0, 0, 0.76);
   .play {
     position: absolute;
     left: 0;
@@ -80,5 +86,11 @@ module.exports = {
   position: absolute;
   left: 520px;
   top: 1160px;
+}
+video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 </style>

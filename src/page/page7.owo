@@ -1,0 +1,25 @@
+<template lang="pug">
+.page7
+  img.so.so-0(src="@|7834.png|")
+  img.so.so-1(src="@|7835.png|" o-animation="shrink" go="page6//scaleDown/moveFromRight/true/scaleDown/moveFromLeft")
+</template>
+<script>
+module.exports = {
+}
+</script>
+<style lang="less">
+.page7 {
+  background-image: url('@|802.jpg|');
+}
+.so-0 {
+  left: 143px;
+  top: 368px;
+  z-index: 1;
+}
+.so-1 {
+  left: 283px;
+  top: 951px;
+  z-index: 0;
+}
+
+</style>
