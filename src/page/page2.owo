@@ -7,7 +7,7 @@
   .so.so-4
     .shalder(o-tap="playVideo")
       img.play(src="@|play.png|")
-    //- img.video-image(src="@|802.png|")
+      img.video-image(src="@|802.png|")
     video(src="http://cunchu.site/people/%E5%B1%B1.mp4")
   //- 下一页
   img.next(src="@|next.png|" go="page3//scaleDown/moveFromRight/true/scaleDown/moveFromLeft")

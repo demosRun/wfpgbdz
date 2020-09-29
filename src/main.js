@@ -39,6 +39,7 @@ var Erase = {
     this.scale = scale
     this.canvasWidth = canvasWidth
     this.canvasHeight = canvasHeight
+    this.touchTime = 0
     this.createCanvas(canvasWidth, canvasHeight, imgUrl);
   },
   createElement: function (w=300, h=150) {
@@ -120,7 +121,7 @@ var Erase = {
       console.info('erase end');
       if (isClearAll) return;
       console.info('像素百分比：', _this.touchTime);
-      if (_this.touchTime > 60) {
+      if (_this.touchTime > 10) {
         _this.clear(canvasContext, canvasWidth, canvasHeight);
         isClearAll = true;
         setTimeout(() => {
