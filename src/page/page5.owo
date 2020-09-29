@@ -1,10 +1,69 @@
 <template lang="pug">
 .page5
-  
+  .so.so-1 刘双燕
+  img.so.so-2(src="@|people3-img.png|")
+  //- 文字
+  p &emsp;&emsp;男，1975年7月出生，中共党员，中共安徽省委政策研究室调研三处处长，现任阜阳市阜南县段郢乡蒲庄村第一书记、扶贫工作队队长。&emsp;&emsp;<br>工作期间，带领工作队和村“两委”扎根淮河洪洼行洪区深度贫困村。他脱下皮鞋换布鞋，坚守一线，决战脱贫，全村贫困发生率由14.4%下降到0.54%，顺利实现村出列目标；他多方争取、多措并举，大力发展特色产业，先后引进企业5家，成立农业专业合作社5家，村集体经济实现了从“零收入”到年近50万元的飞跃；他主攻双基、心系民生，争取并整合项目资金近3000万元，修路建桥、清沟治脏，村容村貌发生翻天覆地的变化；他引导群众组建徒步队、广场舞队、民间艺术团，举办灯光节、中秋灯会，不仅丰富了群众精神文化生活，还发展壮大了“夜市经济”，群众在家门口就能实现就业创业增收。&emsp;&emsp;<br>在他的带领下，蒲庄村由一个远近闻名的贫困“捣蛋村”变成文明小康村、环境脏乱差村变成省级美丽乡村、集体经济“空壳村”变成特色产业示范村。
+  //- 下一页
+  img.next(src="@|next.png|" go="page6//scaleDown/moveFromRight/true/scaleDown/moveFromLeft")
+  .scene__hint
+    img.text(src="@|swipe-text.png|")
+    .scene__hint__line
+      img(src="@|line.png|")
+    img.scene__hint__hand(src="@|swipe-hand.png|")
 </template>
 <script>
 module.exports = {
+  created: function () {
+    if (autoScaleInfo.scale) {
+      Erase.init(this.$el, 750, 1508, '@|people3.jpg|', 50, autoScaleInfo.scale)
+      setTimeout(() => {
+        this.query('.scene__hint').style.display = 'none'
+      }, 2000);
+    } else {
+      this.query('.scene__hint').style.display = 'none'
+    }
+  },
 }
 </script>
 <style lang="less">
+
+.page5 {
+  background-image: url('@|803.jpg|');
+}
+.so-1 {
+  left: 148px;
+  top: 512px;
+  width: 191px;
+  height: 65px;
+  z-index: 0;
+  background-image: url('@|5804.png|');
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  line-height: 65px;
+  font-weight: bold;
+  padding-right: 40px;
+}
+.so-2 {
+  left: 384px;
+  top: 237px;
+  z-index: 0;
+}
+p {
+  position: absolute;
+  left: 175px;
+  top: 610px;
+  width: 530px;
+  font-size: 30px;
+  line-height: 42px;
+  color: #444444;
+  height: 468px;
+  overflow: auto;
+}
+.next {
+  position: absolute;
+  left: 500px;
+  top: 1120px;
+}
 </style>

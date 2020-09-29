@@ -78,13 +78,13 @@
 			"src": "http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js"
 		},
 		{
+			"name": "autoScale",
+			"src": "https://cunchu.site/owo/plug/autoScale.js"
+		},
+		{
 			"name": "main",
 			"src": "./src/main.js",
 			"resource": true
-		},
-		{
-			"name": "autoScale",
-			"src": "https://cunchu.site/owo/plug/autoScale.js"
 		}
 	],
 	"styleList": [
@@ -123,6 +123,11 @@
 		{
 			"name": "page5",
 			"src": "/src/page/page5.owo",
+			"type": "page"
+		},
+		{
+			"name": "page6",
+			"src": "/src/page/page6.owo",
 			"type": "page"
 		}
 	],

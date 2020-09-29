@@ -1,10 +1,11 @@
 <template lang="pug">
 .page-1
   img.so.so-0(src="@|504.png|")
-  img.so.so-1(src="@|804.png|")
-  img.so.so-2(src="@|218.png|")
+  .so.so-2-0
+    img.so.so-2-1(src="@|833.png|")
+    img.so.so-2-2(src="@|834.png|")
   img.so.so-3(src="@|800.png|")
-  img.so.so-4(src="@|803.png|" go="page2")
+  img.so.so-4(src="@|803.png|" o-animation="shrink" go="page2//scaleDown/moveFromRight/true/scaleDown/moveFromLeft")
 </template>
 
 <script>
@@ -42,10 +43,30 @@
   left: 0px;
   top: 592px;
   z-index: 1;
+  pointer-events: none;
 }
 .so-4 {
-  left: 437px;
-  top: 1131px;
-  z-index: 0;
+  left: 80px;
+  right: 0;
+  top: 1150px;
+  z-index: 5;
+  margin: 0 auto;
+}
+.so-2-0 {
+  left: 215px;
+  top: 284px;
+  width: 365px;
+  height: 564px;
+  z-index: 0;;
+}
+.so-2-1 {
+  left: 152px;
+  top: 385px;
+  z-index: -1;
+}
+.so-2-2 {
+  left: 0px;
+  top: 0px;
+  z-index: -2;
 }
 </style>

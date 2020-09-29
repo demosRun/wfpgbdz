@@ -50,3 +50,99 @@ h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, bu
   visibility: hidden;
   clear: both;
 }
+
+.bg-canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.so {
+  position: absolute;
+}
+
+.lf-people .so-2 {
+  left: 74px;
+}
+
+.lf-people .so-1 {
+  left: 434px;
+  top: 538px;
+}
+
+.scene__hint {
+  position: absolute;
+  right: 3%;
+  width: 200px;
+  height: 200px;
+  z-index: 3;
+  bottom: 9%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.scene__hint__text {
+  width: 80%;
+  position: absolute;
+  top: -16%;
+  left: -16%;
+}
+.scene__hint__line {
+  -webkit-animation-name: hintLine;
+  animation-name: hintLine;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  height: 100%;
+  overflow: hidden;
+}
+.scene__hint__line, .scene__hint__line img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+@keyframes hintLine{
+  0%{height:0}
+  to{height:100%}
+}
+
+.scene__hint__hand {
+  -webkit-animation-name: hintHand;
+  animation-name: hintHand;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-iteration-count: 3;
+  animation-iteration-count: 3;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  width: 28%;
+  position: absolute;
+  bottom: 32%;
+  right: 30%;
+  transform-origin: 280% 300%;
+}
+
+@keyframes hintHand{0%{transform:rotate(-40deg)}to{transform:rotate(30deg)}}
+
+.scene__hint__line img img {
+  display: block;
+}
+
+.scene__hint__line, .scene__hint__line img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.scene__hint .text {
+  width: 80%;
+  position: absolute;
+  left: -50px;
+  top: -42px;
+}

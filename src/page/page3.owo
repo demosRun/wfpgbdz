@@ -1,10 +1,73 @@
 <template lang="pug">
-.page3
-  
+.page3.lf-people
+  .so.so-1 钟宇
+  img.so.so-2(src="@|people2-img.png|")
+  //- 文字
+  p &emsp;&emsp;女，中共党员，1975年出生，安徽省亳州市税务局党建科副科长，现任安徽省亳州市利辛县汝集镇朱集村党总支第一书记、驻村扶贫工作队长。该同志自2012年开始连续九年驻村，先后担任安徽省第五、六、七批选派第一书记。<br>&emsp;&emsp;她是税务战线的“巾帼英豪”，她是扶贫路上的“铿锵玫瑰”，她出生在城市却把最美芳华留在了希望的田野上，把人生中最美好的九年时光献给了脱贫攻坚事业，成为乡亲们心中的好干部、口中的“亲闺女”；她屡经生活磨难，母亲、爱人相继去世，却矢志脱贫攻坚事业，把昔日贫困落后的国家级深度贫困村打造成了省级美丽中心村。
+  //- 下一页
+  img.next(src="@|next.png|" go="page4//scaleDown/moveFromRight/true/scaleDown/moveFromLeft")
+  .scene__hint
+    img.text(src="@|swipe-text.png|")
+    .scene__hint__line
+      img(src="@|line.png|")
+    img.scene__hint__hand(src="@|swipe-hand.png|")
 </template>
 <script>
 module.exports = {
+  created: function () {
+    if (autoScaleInfo.scale) {
+      Erase.init(this.$el, 750, 1508, '@|people1.jpg|', 50, autoScaleInfo.scale)
+      setTimeout(() => {
+        this.query('.scene__hint').style.display = 'none'
+      }, 2000);
+    } else {
+      this.query('.scene__hint').style.display = 'none'
+    }
+  },
+  // show: function () {
+  //   setTimeout(() => {
+  //     owo.go('page4//scaleDown/moveFromRight/true/scaleDown/moveFromLeft')
+  //   }, 4000);
+  // }
 }
 </script>
 <style lang="less">
+.page3 {
+  background-image: url('@|803.jpg|');
+}
+.so-1 {
+  left: 148px;
+  top: 512px;
+  width: 191px;
+  height: 65px;
+  z-index: 0;
+  background-image: url('@|5804.png|');
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  line-height: 65px;
+  font-weight: bold;
+  padding-right: 40px;
+}
+.so-2 {
+  left: 384px;
+  top: 237px;
+  z-index: 0;
+}
+p {
+  position: absolute;
+  left: 175px;
+  top: 610px;
+  width: 530px;
+  font-size: 30px;
+  line-height: 42px;
+  color: #444444;
+  height: 468px;
+  overflow: auto;
+}
+.next {
+  position: absolute;
+  left: 500px;
+  top: 1120px;
+}
 </style>

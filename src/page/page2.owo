@@ -8,6 +8,8 @@
     .shalder
       img.play(src="@|play.png|")
     img.video-image(src="@|802.png|")
+  //- 下一页
+  img.next(src="@|next.png|" go="page3//scaleDown/moveFromRight/true/scaleDown/moveFromLeft")
 </template>
 <script>
 module.exports = {
@@ -73,5 +75,10 @@ module.exports = {
   z-index: -1;
   left: 0;
   top: 0;
+}
+.next {
+  position: absolute;
+  left: 520px;
+  top: 1160px;
 }
 </style>

@@ -111,6 +111,19 @@ li {
 .loading-box .text {
   bottom: -14%;
 }
+[o-animation="shrink"] {
+  -webkit-animation: shrink 1s linear alternate infinite;
+  animation: shrink 1s linear alternate infinite;
+}
+@-webkit-keyframes shrink{
+  0%{-webkit-transform:scale(0.9);}
+  100%{-webkit-transform:scale(1);}
+}
+@keyframes shrink{
+  0%{transform:scale(0.9);}
+  100%{transform:scale(1);}
+}
+
 .page-1 {
   background-image: url('../resource/802.jpg');
 }
@@ -141,12 +154,35 @@ li {
   left: 0px;
   top: 592px;
   z-index: 1;
+  pointer-events: none;
 }
 
 .page-1 .so-4 {
-  left: 437px;
-  top: 1131px;
+  left: 80px;
+  right: 0;
+  top: 1150px;
+  z-index: 5;
+  margin: 0 auto;
+}
+
+.page-1 .so-2-0 {
+  left: 215px;
+  top: 284px;
+  width: 365px;
+  height: 564px;
   z-index: 0;
+}
+
+.page-1 .so-2-1 {
+  left: 152px;
+  top: 385px;
+  z-index: -1;
+}
+
+.page-1 .so-2-2 {
+  left: 0px;
+  top: 0px;
+  z-index: -2;
 }
 .page2 .so {
   position: absolute;
@@ -220,6 +256,193 @@ li {
   top: 0;
 }
 
+.page2 .next {
+  position: absolute;
+  left: 520px;
+  top: 1160px;
+}
+.page3 {
+  background-image: url('../resource/803.jpg');
+}
 
+.page3 .so-1 {
+  left: 148px;
+  top: 512px;
+  width: 191px;
+  height: 65px;
+  z-index: 0;
+  background-image: url('../resource/5804.png');
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  line-height: 65px;
+  font-weight: bold;
+  padding-right: 40px;
+}
 
+.page3 .so-2 {
+  left: 384px;
+  top: 237px;
+  z-index: 0;
+}
+
+.page3 p {
+  position: absolute;
+  left: 175px;
+  top: 610px;
+  width: 530px;
+  font-size: 30px;
+  line-height: 42px;
+  color: #444444;
+  height: 468px;
+  overflow: auto;
+}
+
+.page3 .next {
+  position: absolute;
+  left: 500px;
+  top: 1120px;
+}
+.page4 {
+  background-image: url('../resource/803.jpg');
+}
+
+.page4 .so-1 {
+  left: 148px;
+  top: 512px;
+  width: 191px;
+  height: 65px;
+  z-index: 0;
+  background-image: url('../resource/5804.png');
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  line-height: 65px;
+  font-weight: bold;
+  padding-right: 40px;
+}
+
+.page4 .so-2 {
+  left: 384px;
+  top: 237px;
+  z-index: 0;
+}
+
+.page4 p {
+  position: absolute;
+  left: 175px;
+  top: 610px;
+  width: 530px;
+  font-size: 30px;
+  line-height: 42px;
+  color: #444444;
+  height: 468px;
+  overflow: auto;
+}
+
+.page4 .next {
+  position: absolute;
+  left: 500px;
+  top: 1120px;
+}
+.page5 {
+  background-image: url('../resource/803.jpg');
+}
+
+.page5 .so-1 {
+  left: 148px;
+  top: 512px;
+  width: 191px;
+  height: 65px;
+  z-index: 0;
+  background-image: url('../resource/5804.png');
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  line-height: 65px;
+  font-weight: bold;
+  padding-right: 40px;
+}
+
+.page5 .so-2 {
+  left: 384px;
+  top: 237px;
+  z-index: 0;
+}
+
+.page5 p {
+  position: absolute;
+  left: 175px;
+  top: 610px;
+  width: 530px;
+  font-size: 30px;
+  line-height: 42px;
+  color: #444444;
+  height: 468px;
+  overflow: auto;
+}
+
+.page5 .next {
+  position: absolute;
+  left: 500px;
+  top: 1120px;
+}
+.page6 {
+  background-image: url('../resource/802.jpg');
+}
+
+.page6 .so-0 {
+  left: 95px;
+  top: 382px;
+  z-index: 3;
+}
+
+.page6 .so-1 {
+  left: 294px;
+  top: 660px;
+  z-index: 2;
+}
+
+.page6 .so-2 {
+  left: 324px;
+  top: 837px;
+  z-index: 1;
+}
+
+.page6 .so-3 {
+  left: 0px;
+  top: 625px;
+  z-index: 0;
+}
+/* 页面切换动画 */
+.o-page-scaleDown {
+	-webkit-animation: scaleDown .7s ease both;
+	-moz-animation: scaleDown .7s ease both;
+	animation: scaleDown .7s ease both;
+}
+
+@-webkit-keyframes scaleDown {
+	to { opacity: 0; -webkit-transform: scale(.8); }
+}
+@-moz-keyframes scaleDown {
+	to { opacity: 0; -moz-transform: scale(.8); }
+}
+@keyframes scaleDown {
+	to { opacity: 0; transform: scale(.8); }
+}
+.o-page-moveFromRight {
+	-webkit-animation: moveFromRight .6s ease both;
+	-moz-animation: moveFromRight .6s ease both;
+	animation: moveFromRight .6s ease both;
+}
+
+@-webkit-keyframes moveFromRight {
+	from { -webkit-transform: translateX(100%); }
+}
+@-moz-keyframes moveFromRight {
+	from { -moz-transform: translateX(100%); }
+}
+@keyframes moveFromRight {
+	from { transform: translateX(100%); }
+}
 

@@ -1,10 +1,69 @@
 <template lang="pug">
 .page4
-  
+  .so.so-1 刘双燕
+  img.so.so-2(src="@|5798.png|")
+  //- 文字
+  p &emsp;&emsp;男，中共党员，1976年7月出生，合肥市公共资源交易监督管理局，原杨庙镇马郢社区担任第一书记兼扶贫工作队队长。<br>&emsp;&emsp;任职期间，他提出并实施公益项目“马郢计划”，把“助学”、“助村”、“助农”三部分有机融合，坚持不懈推进项目实施。在他的带领下，马郢发生了翻天覆地的变化，乡村的孩子登上了城市大舞台，乡村体验游带火了原先空寂的村庄，众多农户实现了增收致富……
+  //- 下一页
+  img.next(src="@|next.png|" go="page5//scaleDown/moveFromRight/true/scaleDown/moveFromLeft")
+  .scene__hint
+    img.text(src="@|swipe-text.png|")
+    .scene__hint__line
+      img(src="@|line.png|")
+    img.scene__hint__hand(src="@|swipe-hand.png|")
 </template>
 <script>
 module.exports = {
+  created: function () {
+    if (autoScaleInfo.scale) {
+      Erase.init(this.$el, 750, 1508, '@|people2.jpg|', 50, autoScaleInfo.scale)
+      setTimeout(() => {
+        this.query('.scene__hint').style.display = 'none'
+      }, 2000);
+    } else {
+      this.query('.scene__hint').style.display = 'none'
+    }
+  },
 }
 </script>
 <style lang="less">
+
+.page4 {
+  background-image: url('@|803.jpg|');
+}
+.so-1 {
+  left: 148px;
+  top: 512px;
+  width: 191px;
+  height: 65px;
+  z-index: 0;
+  background-image: url('@|5804.png|');
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  line-height: 65px;
+  font-weight: bold;
+  padding-right: 40px;
+}
+.so-2 {
+  left: 384px;
+  top: 237px;
+  z-index: 0;
+}
+p {
+  position: absolute;
+  left: 175px;
+  top: 610px;
+  width: 530px;
+  font-size: 30px;
+  line-height: 42px;
+  color: #444444;
+  height: 468px;
+  overflow: auto;
+}
+.next {
+  position: absolute;
+  left: 500px;
+  top: 1120px;
+}
 </style>
