@@ -10,13 +10,20 @@
       img.video-image(src="@|802.png|")
     video(src="http://cunchu.site/people/%E5%B1%B1.mp4")
   //- 下一页
-  img.next(src="@|next.png|" go="page3//scaleDown/moveFromRight/true/scaleDown/moveFromLeft")
+  img.next(src="@|next.png|" go="next")
 </template>
 <script>
 module.exports = {
   playVideo: function () {
     this.query('.shalder').style.display = 'none'
     this.query('video').play()
+  },
+  next: function () {
+    var videoBox = this.query('video')
+    if (!videoBox.paused) {
+      videoBox.pause()
+    }
+    owo.go('page3//scaleDown/moveFromRight/true/scaleDown/moveFromLeft')
   }
 }
 </script>
