@@ -1,12 +1,19 @@
 <template lang="pug">
 .page6
-  img.so.so-0(src="@|6834.png|")
-  img.so.so-1(src="@|835.png|")
-  img.so.so-2(src="@|504.png|")
-  img.so.so-3(src="@|800.png|")
+  img.so.so-0(src="@|887.png|")
+  img.so.so-1(src="@|886.png|")
+  img.so.so-2(src="@|891.png|")
+  img.so.so-3(src="@|888.png|")
+  img.so.so-4(src="@|778.png|")
+  .num 
 </template>
 <script>
 module.exports = {
+  show: function (params) {
+    $.getJSON("http://littlepoll1.people.com.cn/json.php?type=695&callback=?", (data) => {
+      this.query('.num').innerHTML = data[0].bnum
+    })
+  }
 }
 </script>
 <style lang="less">
@@ -14,23 +21,38 @@ module.exports = {
   background-image: url('@|802.jpg|');
 }
 .so-0 {
-  left: 95px;
-  top: 382px;
-  z-index: 3;
+  left: 147px;
+  top: 376px;
+  z-index: 4;
 }
 .so-1 {
-  left: 294px;
-  top: 660px;
-  z-index: 2;
+  left: 295px;
+  top: 328px;
+  z-index: 3;
 }
 .so-2 {
-  left: 324px;
-  top: 837px;
-  z-index: 1;
+  left: 133px;
+  top: 1006px;
+  z-index: 2;
 }
 .so-3 {
-  left: 0px;
-  top: 625px;
+  left: 273px;
+  top: 1001px;
+  z-index: 1;
+}
+.so-4 {
+  left: 310px;
+  top: 1219px;
   z-index: 0;
+}
+.num {
+  position: absolute;
+  top: 1013px;
+  left: 407px;
+  font-size: 32px;
+  width: 130px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
 }
 </style>

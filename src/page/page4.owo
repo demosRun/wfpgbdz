@@ -3,7 +3,7 @@
   .so.so-1 钟宇
   img.so.so-2(src="@|5798.png|")
   //- 文字
-  p <b>安徽省合肥市长丰县杨庙镇马郢社区<br>原党总支第一书记、扶贫工作队队长。</b><br><br>他编织起一个梦想<br>名曰“马郢计划”<br>在他的带领下<br>乡村的孩子登上了城市大舞台<br>乡村体验游带火了原先空寂的村庄<br>众多农户实现了增收致富……
+  p <b>安徽省合肥市长丰县杨庙镇马郢社区<br>原党总支第一书记、扶贫工作队队长</b><br><br>他编织起一个梦想<br>名曰“马郢计划”<br>在他的带领下<br>乡村的孩子登上了城市大舞台<br>乡村体验游带火了原先空寂的村庄<br>众多农户实现了增收致富……
   //- 下一页
   img.next(src="@|next.png|" go="page3//scaleDown/moveFromRight/true/scaleDown/moveFromLeft" o-animation="shrink")
   .scene__hint
@@ -16,13 +16,16 @@
 module.exports = {
   created: function () {
     if (autoScaleInfo.scale) {
-      Erase.init(this.$el, 750, 1508, '@|people2.jpg|', 50, autoScaleInfo.scale)
       setTimeout(() => {
         this.query('.scene__hint').style.display = 'none'
       }, 2000);
     } else {
       this.query('.scene__hint').style.display = 'none'
     }
+    setTimeout(() => {
+      var erase  = new Erase()
+      erase.init(owo.script.page3.$el, 750, 1508, '@|people1.jpg|', 50, autoScaleInfo.scale)
+    }, 0);
   },
 }
 </script>

@@ -13,6 +13,10 @@ module.exports = {
     setTimeout(() => {
       this.query('.so-3').style.opacity = 1
     }, 3000);
+    setTimeout(() => {
+      var erase  = new Erase()
+      erase.init(owo.script.page4.$el, 750, 1508, '@|people2.jpg|', 50, autoScaleInfo.scale)
+    }, 0);
   }
 }
 </script>
@@ -40,5 +44,6 @@ module.exports = {
   top: 986px;
   z-index: 8;
   opacity: 0;
+  transition: opacity 1s;
 }
 </style>

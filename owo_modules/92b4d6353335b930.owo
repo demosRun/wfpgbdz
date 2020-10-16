@@ -11,7 +11,30 @@
   module.exports = {
     data: {
       imgList: [
-        ''
+        "@|803.jpg|",
+        "@|802.jpg|",
+        "@|802.png|",
+        "@|800.png|",
+        "@|804.jpg|",
+        "@|people3-img.png|",
+        "@|people2-img.png|",
+        "@|5798.png|",
+        "@|7835.png|",
+        "@|834.png|",
+        "@|swipe-hand.png|",
+        "@|7834.png|",
+        "@|swipe-text.png|",
+        "@|6834.png|",
+        "@|797.png|",
+        "@|798.png|",
+        "@|803.png|",
+        "@|line.png|",
+        "@|504.png|",
+        "@|5804.png|",
+        "@|835.png|",
+        "@|next.png|",
+        "@|833.png|",
+        "@|play.png|",
       ]
     },
     show: function () {

@@ -34,6 +34,9 @@ module.exports = {
         this.query('.so-0').style.opacity = '0'
         this.query('.so-7-0').style.opacity = '1'
       }, 1500);
+      setTimeout(() => {
+        this.query('.so-7-1').style.opacity = 1
+      }, 3000);
     }, 500);
   }
 }
@@ -53,6 +56,8 @@ module.exports = {
   left: 283px;
   top: 951px;
   z-index: 0;
+  opacity: 0;
+  transition: opacity 1s;
 }
 .so-0 {
   left: 3px;

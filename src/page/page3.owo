@@ -16,13 +16,16 @@
 module.exports = {
   created: function () {
     if (autoScaleInfo.scale) {
-      Erase.init(this.$el, 750, 1508, '@|people1.jpg|', 50, autoScaleInfo.scale)
       setTimeout(() => {
         this.query('.scene__hint').style.display = 'none'
       }, 2000);
     } else {
       this.query('.scene__hint').style.display = 'none'
     }
+    setTimeout(() => {
+      var erase  = new Erase()
+      erase.init(owo.script.page5.$el, 750, 1508, '@|people3.jpg|', 50, autoScaleInfo.scale)
+    }, 0);
   },
   // show: function () {
   //   setTimeout(() => {

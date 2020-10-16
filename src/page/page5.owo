@@ -16,7 +16,6 @@
 module.exports = {
   created: function () {
     if (autoScaleInfo.scale) {
-      Erase.init(this.$el, 750, 1508, '@|people3.jpg|', 50, autoScaleInfo.scale)
       setTimeout(() => {
         this.query('.scene__hint').style.display = 'none'
       }, 2000);
