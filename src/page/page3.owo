@@ -1,11 +1,11 @@
 <template lang="pug">
 .page3.lf-people
-  .so.so-1 钟宇
+  .so.so-1 卢毅
   img.so.so-2(src="@|people2-img.png|")
   //- 文字
-  p &emsp;&emsp;女，中共党员，1975年出生，安徽省亳州市税务局党建科副科长，现任安徽省亳州市利辛县汝集镇朱集村党总支第一书记、驻村扶贫工作队长。该同志自2012年开始连续九年驻村，先后担任安徽省第五、六、七批选派第一书记。<br>&emsp;&emsp;她是税务战线的“巾帼英豪”，她是扶贫路上的“铿锵玫瑰”，她出生在城市却把最美芳华留在了希望的田野上，把人生中最美好的九年时光献给了脱贫攻坚事业，成为乡亲们心中的好干部、口中的“亲闺女”；她屡经生活磨难，母亲、爱人相继去世，却矢志脱贫攻坚事业，把昔日贫困落后的国家级深度贫困村打造成了省级美丽中心村。
+  p <b>安徽省亳州市蒙城县许疃镇土桥村<br>党总支第一书记、扶贫工作队队长</b><br><br>新冠肺炎疫情暴发之初<br>卢毅刚满一周岁的孩子<br>却因支气管肺炎住进了医院<br>但疫情当前，她将孩子交给家人照顾后<br>就回到了村里<br>加入了防疫这场没有硝烟的战争中
   //- 下一页
-  img.next(src="@|next.png|" go="page4//scaleDown/moveFromRight/true/scaleDown/moveFromLeft")
+  img.next(src="@|next.png|" go="page5//scaleDown/moveFromRight/true/scaleDown/moveFromLeft" o-animation="shrink")
   .scene__hint
     img.text(src="@|swipe-text.png|")
     .scene__hint__line
@@ -43,7 +43,7 @@ module.exports = {
   z-index: 0;
   background-image: url('@|5804.png|');
   color: white;
-  font-size: 30px;
+  font-size: 36px;
   text-align: center;
   line-height: 65px;
   font-weight: bold;
@@ -64,6 +64,7 @@ p {
   color: #444444;
   height: 468px;
   overflow: auto;
+  padding-top: 15px;
 }
 .next {
   position: absolute;

@@ -1,25 +1,202 @@
 <template lang="pug">
 .page7
-  img.so.so-0(src="@|7834.png|")
-  img.so.so-1(src="@|7835.png|" o-animation="shrink" go="page6//scaleDown/moveFromRight/true/scaleDown/moveFromLeft")
+  img.so.so-7-0(src="@|7834.png|")
+  img.so.so-7-1(src="@|7835.png|" o-animation="shrink" go="page6//scaleDown/moveFromRight/true/scaleDown/moveFromLeft")
+  .so.so-0
+    img.so.so-1(src="@|img-839.png|")
+    img.so.so-2(src="@|img-843.png|")
+    img.so.so-3(src="@|img-851.png|")
+    img.so.so-4(src="@|img-850.png|")
+    img.so.so-5(src="@|img-849.png|")
+    img.so.so-6(src="@|img-848.png|")
+    img.so.so-7(src="@|img-847.png|")
+    img.so.so-8(src="@|img-846.png|")
+    img.so.so-9(src="@|img-845.png|")
+    img.so.so-10(src="@|img-844.png|")
+    img.so.so-11(src="@|img-842.png|")
+    img.so.so-12(src="@|img-841.png|")
+    img.so.so-13(src="@|img-840.png|")
+    img.so.so-14(src="@|img-838.png|")
+    img.so.so-15(src="@|img-837.png|")
+    img.so.so-16(src="@|img-836.png|")
+    img.so.so-17(src="@|img-835.png|")
+    img.so.so-18(src="@|img-834.png|")
+    img.so.so-19(src="@|img-852.png|")
+    img.so.so-20(src="@|img-833.png|")
 </template>
 <script>
 module.exports = {
+  created: function () {
+    setTimeout(() => {
+      this.query('.so-0').classList.add('show')
+      
+      setTimeout(() => {
+        this.query('.so-0').style.opacity = '0'
+        this.query('.so-7-0').style.opacity = '1'
+      }, 1500);
+    }, 500);
+  }
 }
 </script>
 <style lang="less">
 .page7 {
   background-image: url('@|802.jpg|');
 }
-.so-0 {
+.so-7-0 {
   left: 143px;
   top: 368px;
   z-index: 1;
+  opacity: 0;
+  transition: opacity 2s;
 }
-.so-1 {
+.so-7-1 {
   left: 283px;
   top: 951px;
   z-index: 0;
 }
-
+.so-0 {
+  left: 3px;
+  top: 236px;
+  width: 747px;
+  height: 1024px;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s;
+  .so {
+    transform-origin: center center;
+    transform:scale(1.8, 1.8);
+  }
+}
+.show {
+  opacity: 1;
+  .so {
+    transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: ease-in;
+    // opacity: 0;
+    transform-origin: center center;
+    transform: scale(0.1, 0.1);
+    left: 300px;
+    top: 185px;
+  }
+}
+.so-1 {
+  left: 22px;
+  top: 0px;
+  z-index: -1;
+  transition-delay: 0.8s;
+}
+.so-2 {
+  left: 589px;
+  top: 28px;
+  z-index: -2;
+  transition-delay: 0.2s;
+}
+.so-3 {
+  left: 51px;
+  top: 192px;
+  z-index: -3;
+  transition-delay: 0.35s;
+}
+.so-4 {
+  left: 266px;
+  top: 873px;
+  z-index: -4;
+}
+.so-5 {
+  left: 90px;
+  top: 348px;
+  z-index: -5;
+  transition-delay: 0.5s;
+}
+.so-6 {
+  left: 589px;
+  top: 689px;
+  z-index: -6;
+  transition-delay: 0.2s;
+}
+.so-7 {
+  left: 586px;
+  top: 893px;
+  z-index: -7;
+  transition-delay: 0.6s;
+}
+.so-8 {
+  left: 546px;
+  top: 360px;
+  z-index: -8;
+  transition-delay: 0.5s;
+}
+.so-9 {
+  left: 42px;
+  top: 564px;
+  z-index: -9;
+  transition-delay: 1.1s;
+}
+.so-10 {
+  left: 256px;
+  top: 68px;
+  z-index: -10;
+  transition-delay: 0.15s;
+}
+.so-11 {
+  left: 0px;
+  top: 782px;
+  z-index: -11;
+  transition-delay: 0.7s;
+}
+.so-12 {
+  left: 263px;
+  top: 797px;
+  z-index: -12;
+  transition-delay: 0.4s;
+}
+.so-13 {
+  left: 396px;
+  top: 367px;
+  z-index: -13;
+  transition-delay: 0.2s;
+}
+.so-14 {
+  left: 591px;
+  top: 591px;
+  z-index: -14;
+  transition-delay: 0.6s;
+}
+.so-15 {
+  left: 396px;
+  top: 461px;
+  z-index: -15;
+  transition-delay: 0.1s;
+}
+.so-16 {
+  left: 482px;
+  top: 679px;
+  z-index: -16;
+}
+.so-17 {
+  left: 488px;
+  top: 574px;
+  z-index: -17;
+  transition-delay: 0.8s;
+}
+.so-18 {
+  left: 390px;
+  top: 689px;
+  z-index: -18;
+  transition-delay: 1.14s;
+}
+.so-19 {
+  left: 154px;
+  top: 299px;
+  z-index: -19;
+  transition-delay: 0.22s;
+}
+.so-20 {
+  left: 268px;
+  top: 516px;
+  z-index: -20;
+  transition-delay: 0.7s;
+}
 </style>

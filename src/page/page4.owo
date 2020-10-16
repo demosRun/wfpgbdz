@@ -1,11 +1,11 @@
 <template lang="pug">
 .page4
-  .so.so-1 刘双燕
+  .so.so-1 钟宇
   img.so.so-2(src="@|5798.png|")
   //- 文字
-  p &emsp;&emsp;男，中共党员，1976年7月出生，合肥市公共资源交易监督管理局，原杨庙镇马郢社区担任第一书记兼扶贫工作队队长。<br>&emsp;&emsp;任职期间，他提出并实施公益项目“马郢计划”，把“助学”、“助村”、“助农”三部分有机融合，坚持不懈推进项目实施。在他的带领下，马郢发生了翻天覆地的变化，乡村的孩子登上了城市大舞台，乡村体验游带火了原先空寂的村庄，众多农户实现了增收致富……
+  p <b>安徽省合肥市长丰县杨庙镇马郢社区<br>原党总支第一书记、扶贫工作队队长。</b><br><br>他编织起一个梦想<br>名曰“马郢计划”<br>在他的带领下<br>乡村的孩子登上了城市大舞台<br>乡村体验游带火了原先空寂的村庄<br>众多农户实现了增收致富……
   //- 下一页
-  img.next(src="@|next.png|" go="page5//scaleDown/moveFromRight/true/scaleDown/moveFromLeft")
+  img.next(src="@|next.png|" go="page3//scaleDown/moveFromRight/true/scaleDown/moveFromLeft" o-animation="shrink")
   .scene__hint
     img.text(src="@|swipe-text.png|")
     .scene__hint__line
@@ -39,7 +39,7 @@ module.exports = {
   z-index: 0;
   background-image: url('@|5804.png|');
   color: white;
-  font-size: 30px;
+  font-size: 36px;
   text-align: center;
   line-height: 65px;
   font-weight: bold;
@@ -60,6 +60,7 @@ p {
   color: #444444;
   height: 468px;
   overflow: auto;
+  padding-top: 15px;
 }
 .next {
   position: absolute;

@@ -30,7 +30,7 @@ var Erase = {
   canvasHeight: 1508,
   radius: 10,
   scale: 1,
-  speed: 10,
+  speed: 15,
   touchTime: 0 ,
   init: function(el, canvasWidth, canvasHeight, imgUrl, radius, scale) {
 

@@ -1,4 +1,4 @@
-// Thu Oct 15 2020 17:25:58 GMT+0800 (GMT+08:00)
+// Fri Oct 16 2020 10:54:53 GMT+0800 (GMT+08:00)
 var owo = {tool: {},state: {},};
 /* 方法合集 */
 var _owo = {
@@ -258,6 +258,29 @@ _owo.cutStringArray = function (original, before, after, index, inline) {
 
 
 
+
+/**
+ * 赋予节点动画效果
+ * @param  {string} name 动画效果名称
+ * @param  {dom} dom 节点
+ */
+owo.animate = function (name, dom, delay) {
+  // 都使用IE了效果还重要吗
+  if (_owo.isIE) return
+  dom.classList.add(name)
+  dom.classList.add('owo-animated')
+  if (delay) {
+    dom.style.animationDelay = delay + 'ms'
+  }
+  dom.addEventListener('animationend', animateEnd)
+  function animateEnd () {
+    dom.classList.remove(name)
+    dom.classList.remove('owo-animated')
+    if (delay) {
+      dom.style.animationDelay = ''
+    }
+  }
+}
 
 // 页面切换
 

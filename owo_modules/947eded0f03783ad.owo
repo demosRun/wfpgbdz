@@ -1,12 +1,12 @@
 <template lang="pug">
 .music-menu
-  img.music-icon(src="https://cunchu.site/ozzx/resource/music.png" o-tap="switchPlay")
+  img.music-icon(src="@|music.png|" o-tap="switchPlay")
 </template>
 
 <script>
   // 微信自动播放音乐
   document.addEventListener("WeixinJSBridgeReady", function () {
-    owo.script.playMusic.play()
+    owo.script.music.play()
   }, false)
   module.exports = {
     data: {
@@ -20,12 +20,12 @@
       console.log('播放音乐')
       if (!this.data.musicIsPlay) {
         this.data.musicIsPlay = true
-        this.data.music = new Audio("https://cunchu.site/ozzx/resource/bg.mp3")
+        this.data.music = new Audio("@|bg.mp3|")
         this.data.music.volume = 0.2
         this.data.music.loop = true
         this.data.music.play()
         const icon = document.getElementsByClassName('music-icon')[0]
-        icon.src = 'https://cunchu.site/ozzx/resource/music.png'
+        icon.src = '@|music.png|'
         icon.classList.add('active')
       }
     },
@@ -34,7 +34,6 @@
         this.data.musicIsPlay = false
         this.data.music.pause()
         const icon = document.getElementsByClassName('music-icon')[0]
-        icon.src = 'https://cunchu.site/ozzx/resource/music.png'
         icon.classList.remove('active')
       }
     }
@@ -48,12 +47,12 @@
   right: 10px;
   top: 10%;
   z-index: 9;
-  width: 67px;
-  height: 67px;
+  width: 40px;
+  height: 40px;
 }
 .music-icon {
-  width: 67px;
-  height: 67px;
+  width: 40px;
+  height: 40px;
 }
 .active {
   animation: musicturn 12s linear infinite;

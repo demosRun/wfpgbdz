@@ -5,13 +5,13 @@
     img.so.so-2-1(src="@|833.png|")
     img.so.so-2-2(src="@|834.png|")
   img.so.so-3(src="@|800.png|")
-  img.so.so-4(src="@|803.png|" o-animation="shrink" go="page2//scaleDown/moveFromRight/true/scaleDown/moveFromLeft")
+  img.so.so-4(src="@|803.png|" o-animation="shrink" go="add1//scaleDown/moveFromRight/true/scaleDown/moveFromLeft")
 </template>
 
 <script>
   module.exports = {
     created: function () {
-
+      owo.animate('bounceInRight', this.query('.so-2-1'), 1000)
     }
   }
 </script>
@@ -61,12 +61,12 @@
 }
 .so-2-1 {
   left: 152px;
-  top: 385px;
+  top: 340px;
   z-index: -1;
 }
 .so-2-2 {
   left: 0px;
-  top: 0px;
+  top: 45px;
   z-index: -2;
 }
 </style>

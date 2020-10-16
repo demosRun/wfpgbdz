@@ -1,19 +1,21 @@
 <template lang="pug">
 .page2
-  img.so.so-0(src="@|804.jpg|")
-  img.so.so-1(src="@|797.png|")
-  img.so.so-2(src="@|798.png|")
-  .so.so-3 任职期间，他提出并实施公益项目“马郢计划”，把“助学”、“助村”、“助农”三部分有机融合，坚持不懈推进项目实施。在他的带领下，马郢发生了翻天覆地的变化，乡村的孩子登上了城市大舞台，乡村体验游带火了原先空寂的村庄，众多农户实现了增收致富……
+  img.so.so-0(src="@|2869.png|")
+  img.so.so-1(src="@|2870.png|")
   .so.so-4
     .shalder(o-tap="playVideo")
       img.play(src="@|play.png|")
       img.video-image(src="@|802.png|")
     video(src="http://cunchu.site/people/%E5%B1%B1.mp4")
   //- 下一页
-  img.next(src="@|next.png|" go="next")
+  img.next(src="@|next.png|" o-tap="next" o-animation="shrink")
 </template>
 <script>
 module.exports = {
+  created: function () {
+    owo.animate('fadeInDown', this.query('.so-0'), 800)
+    owo.animate('zoomIn', this.query('.so-1'), 1800)
+  },
   playVideo: function () {
     this.query('.shalder').style.display = 'none'
     this.query('video').play()
@@ -23,47 +25,26 @@ module.exports = {
     if (!videoBox.paused) {
       videoBox.pause()
     }
-    owo.go('page3//scaleDown/moveFromRight/true/scaleDown/moveFromLeft')
+    owo.go('page7//scaleDown/moveFromRight/true/scaleDown/moveFromLeft')
   }
 }
 </script>
 <style lang="less">
+.page2 {
+  background-image: url('@|872.jpg|');
+}
 .so {
   position: absolute;
 }
 .so-0 {
-  left: 0px;
-  top: 0px;
+  left: 139px;
+  top: 229px;
+  z-index: 1;
 }
 .so-1 {
-  left: 72px;
-  top: 232px;
-  z-index: 3;
-}
-.so-2 {
-  left: 33px;
-  top: 349px;
+  left: 151px;
+  top: 545px;
   z-index: 0;
-  user-select: none;
-  pointer-events: none;
-}
-.so-3 {
-  left: 101px;
-  top: 401px;
-  width: 547px;
-  height: 245px;
-  z-index: 1;
-  color: #444444;
-  font-size: 26px;
-  line-height: 42px;
-  text-indent: 2em;
-}
-.so-4 {
-  left: 63px;
-  top: 718px;
-  width: 626px;
-  height: 403px;
-  z-index: 2;
 }
 .shalder {
   position: absolute;
@@ -99,5 +80,14 @@ video {
   width: 100%;
   height: 100%;
   position: absolute;
+  background-color: black;
+}
+.so-4 {
+  left: 0;
+  right: 0;
+  top: 720px;
+  margin: 0 auto;
+  width: 610px;
+  height: 390px;
 }
 </style>

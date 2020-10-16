@@ -139,6 +139,11 @@
 			"name": "music",
 			"type": "block",
 			"src": "https://template.owo.ink/947eded0f03783ad.owo"
+		},
+		{
+			"name": "add1",
+			"src": "/src/page/add1.owo",
+			"type": "page"
 		}
 	],
 	"mode": {
