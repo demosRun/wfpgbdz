@@ -33,7 +33,7 @@
   <div class="scale-box">
     <!-- 页面[loading]-->
     <div class="loading-box page" template="loading" style="display: none;">
-      <img class="loading" src="https://cunchu.site/ozzx/resource/loadingLogo.png">
+      <img class="loading" src="./static/resource/loading.png">
       <div class="loading-bar">
         <div class="num-bar"></div>
       </div>
@@ -156,6 +156,10 @@
 
   <!-- 框架script文件 -->
   <script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="./static/js/main.js" type="text/javascript" charset="UTF-8"></script>
+  
   <script type="text/javascript" charset="UTF-8">
     // 模块 music 的script代码
     // 微信自动播放音乐
@@ -171,9 +175,8 @@
           var mum = owo.query('.num')[0];
           var numBar = owo.query('.num-bar')[0];
           this.preloadImages(this.data.imgList, function(e) {
-            setTimeout(function() {
-              // owo.go({noBack: true,page: "page1"})
-              owo.go('page1////true');
+            setTimeout(function() { // owo.go({noBack: true,page: "page1"})
+              owo.go('page1////true')
             }, 500);
           }, function(num) {
             numBar.style.width = num + '%';
@@ -368,10 +371,6 @@
       }
     };
   </script>
-
-  <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript" charset="UTF-8"></script>
-  <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript" charset="UTF-8"></script>
-  <script src="./static/js/main.js" type="text/javascript" charset="UTF-8"></script>
 
 </body>
 
