@@ -116,8 +116,9 @@
     </div>
     <!-- 页面[page7]-->
     <div class="page7 page" template="page7" style="display: none;">
-      <img class="so so-7-0" src="./static/resource/7834.png">
-      <img class="so so-7-1" src="./static/resource/7835.png" o-animation="shrink" go="page6//scaleDown/moveFromRight/true/scaleDown/moveFromLeft">
+      <img class="so so-7-0" src="./static/resource/1027.jpg">
+      <img class="so so-7-1" src="./static/resource/1020.png" o-animation="shrink">
+      <div class="num"></div>
       <div class="so so-0">
         <img class="so so-1" src="./static/resource/img-839.png">
         <img class="so so-2" src="./static/resource/img-843.png">
@@ -156,10 +157,6 @@
 
   <!-- 框架script文件 -->
   <script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
-  <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript" charset="UTF-8"></script>
-  <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript" charset="UTF-8"></script>
-  <script src="./static/js/main.js" type="text/javascript" charset="UTF-8"></script>
-  
   <script type="text/javascript" charset="UTF-8">
     // 模块 music 的script代码
     // 微信自动播放音乐
@@ -175,8 +172,9 @@
           var mum = owo.query('.num')[0];
           var numBar = owo.query('.num-bar')[0];
           this.preloadImages(this.data.imgList, function(e) {
-            setTimeout(function() { // owo.go({noBack: true,page: "page1"})
-              owo.go('page1////true')
+            setTimeout(function() {
+              // owo.go({noBack: true,page: "page1"})
+              owo.go('page1////true');
             }, 500);
           }, function(num) {
             numBar.style.width = num + '%';
@@ -316,11 +314,20 @@
             setTimeout(function() {
               _this7.query('.so-0').style.opacity = '0';
               _this7.query('.so-7-0').style.opacity = '1';
+              _this7.query('.num').style.opacity = '1';
             }, 1500);
             setTimeout(function() {
-              _this7.query('.so-7-1').style.opacity = 1;
+              _this7.query('.so-7-1').style.opacity = '1';
             }, 3000);
           }, 500);
+          owo.tool.heart(this.query('.so-7-1'));
+        },
+        "show": function show(params) {
+          var _this8 = this;
+
+          $.getJSON("http://littlepoll1.people.com.cn/json.php?type=695&callback=?", function(data) {
+            _this8.query('.num').innerHTML = data[0].bnum;
+          });
         }
       },
       "music": {
@@ -356,12 +363,12 @@
       },
       "add1": {
         "created": function created() {
-          var _this8 = this;
+          var _this9 = this;
 
           owo.animate('fadeInLeft', this.query('.so-1'), 1000);
           owo.animate('fadeInRight', this.query('.so-2'), 2000);
           setTimeout(function() {
-            _this8.query('.so-3').style.opacity = 1;
+            _this9.query('.so-3').style.opacity = 1;
           }, 3000);
           setTimeout(function() {
             var erase = new Erase();
@@ -372,6 +379,11 @@
     };
   </script>
 
+  <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="./static/js/main.js" type="text/javascript" charset="UTF-8"></script>
+
+  <script src="./static/js/heart.js" type="text/javascript" charset="UTF-8"></script>
 </body>
 
 </html>

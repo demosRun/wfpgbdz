@@ -1,7 +1,8 @@
 <template lang="pug">
 .page7
-  img.so.so-7-0(src="@|7834.png|")
-  img.so.so-7-1(src="@|7835.png|" o-animation="shrink" go="page6//scaleDown/moveFromRight/true/scaleDown/moveFromLeft")
+  img.so.so-7-0(src="@|1027.jpg|")
+  img.so.so-7-1(src="@|1020.png|" o-animation="shrink")
+  .num
   .so.so-0
     img.so.so-1(src="@|img-839.png|")
     img.so.so-2(src="@|img-843.png|")
@@ -33,11 +34,18 @@ module.exports = {
       setTimeout(() => {
         this.query('.so-0').style.opacity = '0'
         this.query('.so-7-0').style.opacity = '1'
+        this.query('.num').style.opacity = '1'
       }, 1500);
       setTimeout(() => {
-        this.query('.so-7-1').style.opacity = 1
+        this.query('.so-7-1').style.opacity = '1'
       }, 3000);
     }, 500);
+    owo.tool.heart(this.query('.so-7-1'))
+  },
+  show: function (params) {
+    $.getJSON("http://littlepoll1.people.com.cn/json.php?type=695&callback=?", (data) => {
+      this.query('.num').innerHTML = data[0].bnum
+    })
   }
 }
 </script>
@@ -46,16 +54,16 @@ module.exports = {
   background-image: url('@|802.jpg|');
 }
 .so-7-0 {
-  left: 143px;
-  top: 368px;
+  left: 0px;
+  top: 0px;
   z-index: 1;
   opacity: 0;
-  transition: opacity 2s;
+  transition: opacity 1s;
 }
 .so-7-1 {
-  left: 283px;
-  top: 951px;
-  z-index: 0;
+  left: 469px;
+  top: 511px;
+  z-index: 3;
   opacity: 0;
   transition: opacity 1s;
 }
@@ -203,5 +211,19 @@ module.exports = {
   top: 516px;
   z-index: -20;
   transition-delay: 0.7s;
+}
+.num {
+  position: absolute;
+  left: 165px;
+  top: 348px;
+  font-size: 50px;
+  color: #da6f61;
+  z-index: 9;
+  font-weight: bold;
+  line-height: 60px;
+  width: 170px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s;
 }
 </style>

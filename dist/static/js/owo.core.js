@@ -1,4 +1,4 @@
-// Fri Oct 16 2020 18:42:19 GMT+0800 (GMT+08:00)
+// Wed Oct 21 2020 13:16:19 GMT+0800 (GMT+08:00)
 var owo = {tool: {},state: {},};
 /* 方法合集 */
 var _owo = {
@@ -267,6 +267,10 @@ _owo.cutStringArray = function (original, before, after, index, inline) {
 owo.animate = function (name, dom, delay) {
   // 都使用IE了效果还重要吗
   if (_owo.isIE) return
+  var owoAni = dom.getAttribute('o-animation')
+  if (owoAni) {
+    dom.setAttribute('o-animation', owoAni + '-suspend')
+  }
   dom.classList.add(name)
   dom.classList.add('owo-animated')
   if (delay) {
@@ -278,6 +282,9 @@ owo.animate = function (name, dom, delay) {
     dom.classList.remove('owo-animated')
     if (delay) {
       dom.style.animationDelay = ''
+    }
+    if (owoAni) {
+      dom.setAttribute('o-animation', owoAni)
     }
   }
 }

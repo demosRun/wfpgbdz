@@ -85,6 +85,11 @@
 			"name": "main",
 			"src": "./src/main.js",
 			"resource": true
+		},
+		{
+			"name": "heart",
+			"afterbody": true,
+			"src": "./owo_modules/heart.js"
 		}
 	],
 	"styleList": [

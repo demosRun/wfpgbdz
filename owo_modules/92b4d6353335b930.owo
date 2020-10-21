@@ -43,7 +43,7 @@
       this.preloadImages(this.data.imgList, (e) => {
         setTimeout(() => {
           // owo.go({noBack: true,page: "page1"})
-          // owo.go('page1////true')
+          owo.go('page1////true')
         }, 500)
       }, (num) => {
         numBar.style.width = num + '%'
