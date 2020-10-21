@@ -105,21 +105,13 @@
         <img class="scene__hint__hand" src="./static/resource/swipe-hand.png">
       </div>
     </div>
-    <!-- 页面[page6]-->
-    <div class="page6 page" template="page6" style="display: none;">
-      <img class="so so-0" src="./static/resource/887.png">
-      <img class="so so-1" src="./static/resource/886.png">
-      <img class="so so-2" src="./static/resource/891.png">
-      <img class="so so-3" src="./static/resource/888.png">
-      <img class="so so-4" src="./static/resource/778.png">
-      <div class="num"> </div>
-    </div>
     <!-- 页面[page7]-->
     <div class="page7 page" template="page7" style="display: none;">
       <img class="so so-7-0" src="./static/resource/1027.jpg">
-      <img class="so so-7-1" src="./static/resource/1020.png" o-animation="shrink">
       <div class="num"></div>
-      <div class="so so-0">
+      <img class="hide-to-image so so-7-1" src="./static/resource/1020.png" o-animation="shrink">
+      <img class="hide-to-image canvas-image">
+      <div class="so so-0 hide-to-image">
         <img class="so so-1" src="./static/resource/img-839.png">
         <img class="so so-2" src="./static/resource/img-843.png">
         <img class="so so-3" src="./static/resource/img-851.png">
@@ -151,7 +143,7 @@
     </div>
   </div>
   <!-- 插件[music]-->
-  <div class="music-menu owo-block" template="music" style="display: none;">
+  <div class="music-menu hide-to-image owo-block" template="music" style="display: none;">
     <img class="music-icon" src="./static/resource/music.png" o-tap="switchPlay">
   </div>
 
@@ -295,38 +287,42 @@
           }
         }
       },
-      "page6": {
-        "show": function show(params) {
-          var _this6 = this;
-
-          $.getJSON("http://littlepoll1.people.com.cn/json.php?type=695&callback=?", function(data) {
-            _this6.query('.num').innerHTML = data[0].bnum;
-          });
-        }
-      },
       "page7": {
         "created": function created() {
-          var _this7 = this;
+          var _this6 = this;
 
           setTimeout(function() {
-            _this7.query('.so-0').classList.add('show');
+            _this6.query('.so-0').classList.add('show');
 
             setTimeout(function() {
-              _this7.query('.so-0').style.opacity = '0';
-              _this7.query('.so-7-0').style.opacity = '1';
-              _this7.query('.num').style.opacity = '1';
+              _this6.query('.so-0').style.opacity = '0';
+              _this6.query('.so-7-0').style.opacity = '1';
+              _this6.query('.num').style.opacity = '1';
             }, 1500);
             setTimeout(function() {
-              _this7.query('.so-7-1').style.opacity = '1';
+              _this6.query('.so-7-1').style.opacity = '1';
             }, 3000);
           }, 500);
           owo.tool.heart(this.query('.so-7-1'));
         },
         "show": function show(params) {
-          var _this8 = this;
+          var _this7 = this;
 
           $.getJSON("http://littlepoll1.people.com.cn/json.php?type=695&callback=?", function(data) {
-            _this8.query('.num').innerHTML = data[0].bnum;
+            _this7.query('.num').innerHTML = data[0].bnum;
+            setTimeout(function() {
+              html2canvas(document.body, {
+                height: window.innerHeight,
+                ignoreElements: function ignoreElements(element) {
+                  console.log(element);
+                  if (element.classList.contains('hide-to-image')) return true;
+                  else return false;
+                }
+              }).then(function(canvas) {
+                var base64Img = canvas.toDataURL('image/jpg');
+                _this7.query('.canvas-image').src = base64Img;
+              });
+            }, 4000);
           });
         }
       },
@@ -363,12 +359,12 @@
       },
       "add1": {
         "created": function created() {
-          var _this9 = this;
+          var _this8 = this;
 
           owo.animate('fadeInLeft', this.query('.so-1'), 1000);
           owo.animate('fadeInRight', this.query('.so-2'), 2000);
           setTimeout(function() {
-            _this9.query('.so-3').style.opacity = 1;
+            _this8.query('.so-3').style.opacity = 1;
           }, 3000);
           setTimeout(function() {
             var erase = new Erase();
@@ -382,6 +378,7 @@
   <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript" charset="UTF-8"></script>
   <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript" charset="UTF-8"></script>
   <script src="./static/js/main.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="./static/js/html2canvas.js" type="text/javascript" charset="UTF-8"></script>
 
   <script src="./static/js/heart.js" type="text/javascript" charset="UTF-8"></script>
 </body>

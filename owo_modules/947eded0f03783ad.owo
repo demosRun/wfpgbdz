@@ -1,5 +1,5 @@
 <template lang="pug">
-.music-menu
+.music-menu.hide-to-image
   img.music-icon(src="@|music.png|" o-tap="switchPlay")
 </template>
 

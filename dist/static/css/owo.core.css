@@ -382,50 +382,6 @@ li {
   left: 500px;
   top: 1120px;
 }
-.page6 {
-  background-image: url('../resource/802.jpg');
-}
-
-.page6 .so-0 {
-  left: 147px;
-  top: 376px;
-  z-index: 4;
-}
-
-.page6 .so-1 {
-  left: 295px;
-  top: 328px;
-  z-index: 3;
-}
-
-.page6 .so-2 {
-  left: 133px;
-  top: 1006px;
-  z-index: 2;
-}
-
-.page6 .so-3 {
-  left: 273px;
-  top: 1001px;
-  z-index: 1;
-}
-
-.page6 .so-4 {
-  left: 310px;
-  top: 1219px;
-  z-index: 0;
-}
-
-.page6 .num {
-  position: absolute;
-  top: 1013px;
-  left: 407px;
-  font-size: 32px;
-  width: 130px;
-  text-align: center;
-  line-height: 40px;
-  font-weight: bold;
-}
 .page7 {
   background-image: url('../resource/802.jpg');
 }
@@ -627,6 +583,19 @@ li {
   text-align: center;
   opacity: 0;
   transition: opacity 1s;
+}
+
+.page7 .canvas-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  opacity: 0;
+}
+
+.page7 #share {
+  width: 100%;
+  height: 100%;
 }
 .music-menu {
   position: absolute;

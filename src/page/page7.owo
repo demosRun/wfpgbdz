@@ -1,9 +1,11 @@
 <template lang="pug">
 .page7
   img.so.so-7-0(src="@|1027.jpg|")
-  img.so.so-7-1(src="@|1020.png|" o-animation="shrink")
   .num
-  .so.so-0
+  img.hide-to-image.so.so-7-1(src="@|1020.png|" o-animation="shrink")
+  img.hide-to-image.canvas-image
+  
+  .so.so-0.hide-to-image
     img.so.so-1(src="@|img-839.png|")
     img.so.so-2(src="@|img-843.png|")
     img.so.so-3(src="@|img-851.png|")
@@ -45,6 +47,19 @@ module.exports = {
   show: function (params) {
     $.getJSON("http://littlepoll1.people.com.cn/json.php?type=695&callback=?", (data) => {
       this.query('.num').innerHTML = data[0].bnum
+      setTimeout(() => {
+        html2canvas(document.body, {
+          height: window.innerHeight,
+            ignoreElements:(element)=>{
+              console.log(element)
+              if (element.classList.contains('hide-to-image')) return true;
+              else return false
+            }
+          }).then((canvas) => {
+          let base64Img = canvas.toDataURL('image/jpg')
+          this.query('.canvas-image').src = base64Img
+        });
+      }, 4000);
     })
   }
 }
@@ -225,5 +240,16 @@ module.exports = {
   text-align: center;
   opacity: 0;
   transition: opacity 1s;
+}
+.canvas-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  opacity: 0;
+}
+#share {
+  width: 100%;
+  height: 100%;
 }
 </style>

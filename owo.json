@@ -90,6 +90,10 @@
 			"name": "heart",
 			"afterbody": true,
 			"src": "./owo_modules/heart.js"
+		},
+		{
+			"name": "html2canvas",
+			"src": "./owo_modules/html2canvas.min.js"
 		}
 	],
 	"styleList": [
@@ -128,11 +132,6 @@
 		{
 			"name": "page5",
 			"src": "/src/page/page5.owo",
-			"type": "page"
-		},
-		{
-			"name": "page6",
-			"src": "/src/page/page6.owo",
 			"type": "page"
 		},
 		{
